@@ -39,42 +39,4 @@
                     (error 'parse "n-ariedad equivocada"))]
        [(expt) (if  (equal?(length(cdr sexp)) 2)
                      (op expt (map parse(cdr sexp)) )
-                    (error 'parse "n-ariedad equivocada"))]
-       [(with) (with (parse-listaBindings (second sexp)) (parse (third sexp)))]
-       [(with*) (with* (parse-listaBindings (second sexp)) (parse (third sexp)))])]))
-
-
-;; Procedimiento para verificar si en una lista hay repetidos
-;; repetidos?: listof(A) -> boolean
-(define (repetidos? lista)
-  (cond
-    [(empty? lista) #f]
-    [(member (car lista) (cdr lista)) #t]
-    [else (repetidos? (cdr lista))]))
-
-;; Procedimiento para obtener la lista de id's
-;; get-listaIds: listof(A) ->  listof(A);; 
-(define (get-listaIds lista)
-  (if (empty? lista)
-      empty
-      (cons (car (car lista)) (get-listaIds (cdr lista))))) ;; (car (car lista)) porque son de la forma {id symbol}
-
-
-;; Procedimiento para obtener una lista de Bindings a partir de una lista de Id's
-;; parse-listaBindings listof(A) ->  listof(A);; 
-(define (parse-listaBindings lista)
-  (if (repetidos? (get-listaIds lista))
-      (error 'parse "Existen id's repetidos")
-      (map (λ (l) (binding (car l) (parse (car (cdr l))))) lista)))
-
-
-
-
-
-
-
-
-
-
-
-
+                    (error 'parse "n-ariedad equivocada"))])]))

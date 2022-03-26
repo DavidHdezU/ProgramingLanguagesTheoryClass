@@ -1,0 +1,1 @@
+("8.4" ta6le ("d3cf082210828731bb511ee97fe36910e80eb1cd" . "db67a4b6eb282b846561b38fe67998c9ecfabdbd") #"/home/usuario/Documentos/FC/LenguajesProgamacion/ProgramingLanguagesTheoryClass/psets/pset3/./grammars.rkt" (collects #"errortrace" #"errortrace-key.rkt") (collects #"plai" #"lang" #"reader.rkt") (collects #"plai" #"main.rkt") (collects #"racket" #"runtime-config.rkt"))
